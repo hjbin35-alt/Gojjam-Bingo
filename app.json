@@ -1,0 +1,38 @@
+{
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token",
+      "required": true
+    },
+    "JWT_SECRET": {
+      "description": "JWT Secret Key",
+      "required": true,
+      "value": "change-me-to-random-string"
+    },
+    "WEB_APP_URL": {
+      "description": "Web App URL",
+      "required": true,
+      "value": "https://gojjam-bingo.vercel.app"
+    },
+    "ADMIN_IDS": {
+      "description": "Admin Telegram IDs (comma separated)",
+      "required": true
+    },
+    "NODE_ENV": {
+      "value": "production"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    },
+    {
+      "plan": "heroku-redis:premium-0"
+    }
+  ]
+}

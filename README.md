@@ -2,6 +2,8 @@
 
 A full-featured Telegram Bingo game platform with mini-app integration, real-time socket.io updates, and wallet management.
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template?template=https://github.com/hjbin35-alt/Gojjam-Bingo&envs=BOT_TOKEN,JWT_SECRET,WEB_APP_URL,ADMIN_IDS&BOT_TOKENDesc=Your+Telegram+Bot+Token&JWT_SECRETDesc=Random+JWT+Secret+Key&WEB_APP_URLDefault=https://gojjam-bingo.vercel.app&ADMIN_IDSDesc=Your+Telegram+Admin+ID)
+
 ## Architecture
 
 ```
@@ -41,6 +43,7 @@ gojjam-bingo/
 - **Frontend:** React/Next.js
 - **Database:** PostgreSQL + Redis
 - **Infrastructure:** Docker
+- **Hosting:** Railway.app
 
 ## Bot Commands
 
@@ -74,7 +77,25 @@ gojjam-bingo/
 7. **SERVER VALIDATION** (Verify bingo)
 8. **PAYOUT** (Distribute winnings)
 
-## Installation
+## Quick Deployment
+
+### Railway (Recommended)
+
+Click the button above or follow these steps:
+
+1. **Create Account:** https://railway.app
+2. **Authorize GitHub** and select this repo
+3. **Add Environment Variables:**
+   - `BOT_TOKEN` - Your Telegram Bot Token
+   - `JWT_SECRET` - Random secret key
+   - `WEB_APP_URL` - https://gojjam-bingo.vercel.app
+   - `ADMIN_IDS` - Your Telegram Admin ID
+4. **Deploy** - Railway auto-configures PostgreSQL & Redis
+5. **Set Webhook** - Register your bot with Telegram
+
+See [RAILWAY_DEPLOYMENT.md](./RAILWAY_DEPLOYMENT.md) for detailed steps.
+
+## Installation (Local Development)
 
 ### Prerequisites
 - Node.js 18+
@@ -170,6 +191,7 @@ Socket.IO Events:
 ✅ Admin controls
 ✅ Game logic & validation
 ✅ Docker deployment
+✅ Railway auto-deployment
 
 ## Security
 
@@ -179,6 +201,14 @@ Socket.IO Events:
 - CORS configuration
 - Helmet security headers
 - Environment variable protection
+- HTTPS enabled on Railway
+
+## Deployment Options
+
+- **Railway.app** (Recommended) - See [RAILWAY_DEPLOYMENT.md](./RAILWAY_DEPLOYMENT.md)
+- **DigitalOcean** - See [DEPLOYMENT.md](./DEPLOYMENT.md)
+- **Heroku** - Use `app.json`
+- **Local Docker** - Use `deploy.sh`
 
 ## Support
 

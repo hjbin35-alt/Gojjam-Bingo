@@ -1,0 +1,59 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "name": "Gojjam Bingo Bot",
+  "description": "Telegram Bingo Game Platform with Real-time Updates",
+  "keywords": [
+    "telegram",
+    "bot",
+    "bingo",
+    "game",
+    "socket.io",
+    "postgres",
+    "redis"
+  ],
+  "image": "node:18-alpine",
+  "services": {
+    "bot": {
+      "startCommand": "npm install && node apps/bot/index.js",
+      "buildCommand": "npm install",
+      "variables": [
+        {
+          "name": "BOT_TOKEN",
+          "description": "Telegram Bot Token from @BotFather",
+          "required": true
+        },
+        {
+          "name": "JWT_SECRET",
+          "description": "JWT Secret Key (use random string)",
+          "value": "change-me-to-random-string-123456"
+        },
+        {
+          "name": "WEB_APP_URL",
+          "description": "Web App URL for mini-app",
+          "value": "https://gojjam-bingo.vercel.app"
+        },
+        {
+          "name": "ADMIN_IDS",
+          "description": "Your Telegram Admin ID",
+          "required": true
+        },
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "name": "PORT",
+          "value": "3000"
+        }
+      ]
+    }
+  },
+  "plugins": {
+    "postgres": {
+      "plan": "starter"
+    },
+    "redis": {
+      "plan": "starter"
+    }
+  }
+}
